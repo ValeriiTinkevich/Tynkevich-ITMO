@@ -11,14 +11,13 @@ public class Location {
         this.z = z;
     }
 
-    public double getX() {
+    public Double getX() {
         return x;
     }
 
     public Long getY() {
         return y;
     }
-
     public Integer getZ() {
         return z;
     }

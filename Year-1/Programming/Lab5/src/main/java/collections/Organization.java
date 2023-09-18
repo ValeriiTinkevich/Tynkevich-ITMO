@@ -1,6 +1,8 @@
 package collections;
 
+
 import java.time.ZonedDateTime;
+
 
 public class Organization implements Comparable<Organization> {
     private int id;
@@ -16,7 +18,6 @@ public class Organization implements Comparable<Organization> {
     public Organization() {
 
     }
-
     public Organization(int id, String name, Coordinates coordinates, ZonedDateTime creationDate, int annualTurnover, String fullName, Integer employeesCount, OrganizationType type, Address postalAddress) {
         this.id = id;
         this.name = name;
@@ -45,6 +46,7 @@ public class Organization implements Comparable<Organization> {
         return coordinates;
     }
 
+
     public ZonedDateTime getCreationDate() {
         return creationDate;
     }
@@ -61,14 +63,38 @@ public class Organization implements Comparable<Organization> {
         return employeesCount;
     }
 
+
     public OrganizationType getType() {
         return type;
     }
+
 
     public Address getPostalAddress() {
         return postalAddress;
     }
 
+    public Double getPostalX() {
+        return this.postalAddress.getTown().getX();
+    }
+
+    public Long getPostalY() {
+        return this.postalAddress.getTown().getY();
+    }
+
+    public Integer getPostalZ() {
+        return this.postalAddress.getTown().getZ();
+    }
+
+    public String getPostalZipCode() {
+        return this.postalAddress.getZipCode();
+    }
+
+    public Double getCoordinateX() {
+        return this.coordinates.getX();
+    }
+    public Long getCoordinateY() {
+        return this.coordinates.getY();
+    }
     @Override
     public int compareTo(Organization o) {
         return this.getAnnualTurnover() - o.getAnnualTurnover();

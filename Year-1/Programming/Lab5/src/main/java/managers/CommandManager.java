@@ -13,9 +13,11 @@ public class CommandManager {
     private final String[] commandHistory = new String[COMMAND_HISTORY_SIZE];
     OrganizationInputManager organizationInputManager;
     CollectionManager collectionManager;
-    public CommandManager(OrganizationInputManager organizationInputManager, CollectionManager collectionManager) {
+    FileReader fileReader;
+    public CommandManager(OrganizationInputManager organizationInputManager, CollectionManager collectionManager, FileReader fileReader) {
         this.organizationInputManager = organizationInputManager;
         this.collectionManager = collectionManager;
+        this.fileReader = fileReader;
         commands = new HashMap<>();
         commands.put("help", new HelpCommand(this.commands));
         commands.put("info", new InfoCommand(this.collectionManager));
@@ -24,8 +26,8 @@ public class CommandManager {
         commands.put("add_if_max", new AddIfMaxCommand(this.organizationInputManager, this.collectionManager));
         commands.put("update_id", new UpdateByIdCommand());
         commands.put("remove_by_id", new RemoveByIdCommand());
-        commands.put("clear", new ClearCommand(collectionManager));
-        commands.put("save", new SaveCommand());
+        commands.put("clear", new ClearCommand(this.collectionManager));
+        commands.put("save", new SaveCommand(this.collectionManager, this.fileReader));
         commands.put("execute_script", new ExecuteScriptCommand());
         commands.put("exit", new ExitCommand());
 

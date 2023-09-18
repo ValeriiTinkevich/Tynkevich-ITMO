@@ -46,7 +46,7 @@ public class Console {
                 command.execute(userCommand[1]);
             }
             catch (NullPointerException e) {
-                printError("No such command");
+                Console.println(e.getMessage());
             }
         } while (userScanner.hasNext());
 

@@ -9,7 +9,7 @@ import collections.Organization;
  * Class that manages collections.
  */
 public class CollectionManager {
-    private ArrayList<Organization> organizationCollection;
+    public ArrayList<Organization> organizationCollection;
     private final ZonedDateTime creationDate;
 
     public CollectionManager() {

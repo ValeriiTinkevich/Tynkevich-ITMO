@@ -9,10 +9,10 @@ public class Address {
         this.town = location;
     }
 
+
     public String getZipCode() {
         return zipCode;
     }
-
     public Location getTown() {
         return town;
     }
