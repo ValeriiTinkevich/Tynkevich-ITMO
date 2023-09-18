@@ -1,11 +1,6 @@
-import collections.Organization;
 import exceptions.WrongAmountOfArgumentsException;
 import managers.*;
-
-
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.util.Collection;
 import java.util.Scanner;
 
 public class Main {
