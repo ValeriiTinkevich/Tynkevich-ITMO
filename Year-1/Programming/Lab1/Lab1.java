@@ -1,5 +1,5 @@
 public class Lab1 {
-	public static void main(String[] args) {
+	public static void Lab1(String[] args) {
 		int even = 4;
 		short[] a = new short[10];
 		double[] x = new double[16];

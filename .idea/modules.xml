@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Year-1/Programming/Lab5/Lab5T.iml" filepath="$PROJECT_DIR$/Year-1/Programming/Lab5/Lab5T.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Year-1/Programming/Lab2/Lab2.iml" filepath="$PROJECT_DIR$/Year-1/Programming/Lab2/Lab2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Year-1/Programming/Lab3/Lab3.iml" filepath="$PROJECT_DIR$/Year-1/Programming/Lab3/Lab3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Year-1/Programming/Lab5/Lab5.iml" filepath="$PROJECT_DIR$/Year-1/Programming/Lab5/Lab5.iml" />
       <module fileurl="file://$PROJECT_DIR$/Year-1/Programming/Programming.iml" filepath="$PROJECT_DIR$/Year-1/Programming/Programming.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Year-1.iml" filepath="$PROJECT_DIR$/.idea/Year-1.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Year-1/Programming/lab2/lab2.iml" filepath="$PROJECT_DIR$/Year-1/Programming/lab2/lab2.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Year-1/Programming/lab3/lab3.iml" filepath="$PROJECT_DIR$/Year-1/Programming/lab3/lab3.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Year-1/Programming/lab3/lab3/lab31.iml" filepath="$PROJECT_DIR$/Year-1/Programming/lab3/lab3/lab31.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Year-1/Programming/Lab3/lab3/lab31.iml" filepath="$PROJECT_DIR$/Year-1/Programming/Lab3/lab3/lab31.iml" />
     </modules>
   </component>
 </project>
