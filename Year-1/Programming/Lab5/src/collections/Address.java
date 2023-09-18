@@ -5,6 +5,8 @@ public class Address {
     private Location town; //Поле может быть null
 
     public Address(String zipCode, Location location) {
+        this.zipCode = zipCode;
+        this.town = location;
     }
 
     public String getZipCode() {

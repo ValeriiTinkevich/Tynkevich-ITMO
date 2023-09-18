@@ -19,7 +19,7 @@ public class CommandManager {
         commands = new HashMap<>();
         commands.put("help", new HelpCommand(this.commands));
         commands.put("info", new InfoCommand(this.collectionManager));
-        commands.put("show", new ShowCommand());
+        commands.put("show", new ShowCommand(this.collectionManager));
         commands.put("add", new AddElementCommand(this.organizationInputManager, this.collectionManager));
         commands.put("add_if_max", new AddIfMaxCommand(this.organizationInputManager, this.collectionManager));
         commands.put("update_id", new UpdateByIdCommand());

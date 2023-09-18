@@ -201,8 +201,8 @@ public class OrganizationInputManager {
      * @return Returns coordinates.
      */
     public Coordinates askCoordinates() {
-        Double x;
-        Long y;
+        double x;
+        long y;
         x = askCoordX();
         y = askCoordY();
         return new Coordinates(x, y);
@@ -372,6 +372,7 @@ public class OrganizationInputManager {
             Console.print("Enter the full name: ");
             try {
                 fullName = userScanner.nextLine().trim();
+                if (fullName.isEmpty()) return null;
                 String finalFullName = fullName;
                 if (collectionManager.getOrganizationCollection()
                         .stream()

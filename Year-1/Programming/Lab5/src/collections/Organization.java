@@ -71,16 +71,26 @@ public class Organization implements Comparable<Organization> {
 
     @Override
     public int compareTo(Organization o) {
-        return this.getId() - o.getId();
+        return this.getAnnualTurnover() - o.getAnnualTurnover();
     }
 
     @Override
     public String toString() {
-        String result = String.format("Id: %d\nName: %s\nCoordinates: {x: %f, y: %d}\nCreation Time: %s\nAnnual turnover: %d\nEmployees count: %d\nOrganization Type: %s\n",
-                getId(), getName(), getCoordinates().getX(), getCoordinates().getY(), getCreationDate(), getAnnualTurnover(), getEmployeesCount(), getType());
-        if (getPostalAddress() == null) result += "Address: null";
-        else
-            result += String.format("Address: {Street: %s, ZipCode: %s}", getPostalAddress().getTown(), getPostalAddress().getZipCode());
+        String result = String.format("Id: %d\nName: %s\nCoordinates: {x: %f y: %d}\nCreation Time: %s\nAnnual turnover: %d\nEmployees count: %d\nOrganization Type: %s\n",
+                getId(),
+                getName(),
+                getCoordinates().getX(),
+                getCoordinates().getY(),
+                getCreationDate(),
+                getAnnualTurnover(),
+                getEmployeesCount(),
+                getType());
+
+        result += String.format("Address: {Town: {x: %f y: %d z: %d}, ZipCode: %s}",
+                getPostalAddress().getTown().getX(),
+                getPostalAddress().getTown().getY(),
+                getPostalAddress().getTown().getZ(),
+                getPostalAddress().getZipCode());
         return result;
     }
 }

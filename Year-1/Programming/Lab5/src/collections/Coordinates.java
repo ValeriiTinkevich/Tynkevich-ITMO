@@ -5,13 +5,15 @@ public class Coordinates {
     private Long y; //Значение поля должно быть больше -671, Поле не может быть null
 
     public Coordinates(Double x, Long y) {
+        this.x = x;
+        this.y = y;
     }
 
     public Double getX() {
-        return x;
+        return this.x;
     }
 
     public Long getY() {
-        return y;
+        return this.y;
     }
 }

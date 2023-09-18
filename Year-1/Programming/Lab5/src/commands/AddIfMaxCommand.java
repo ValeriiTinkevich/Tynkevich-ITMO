@@ -49,7 +49,7 @@ public class AddIfMaxCommand extends AbstractCommand{
                     .stream()
                     .max(Comparator.comparing(Organization::getAnnualTurnover))
                     .orElseThrow(NoSuchElementException::new);
-            if(askerOrganization.getAnnualTurnover() > maxOrganization.getAnnualTurnover()){
+            if(askerOrganization.compareTo(maxOrganization) > 0){
                 collectionManager.addToCollection(askerOrganization);
                 Console.println("Organization was added successfully!");
             } else {

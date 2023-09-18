@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 
 public class Main {
-    public static void main(String[] args) throws IOException, WrongAmountOfArgumentsException, IncorrectInputInScriptException {
+    public static void main(String[] args) throws WrongAmountOfArgumentsException {
         Scanner userScanner = new Scanner(System.in);
         CollectionManager clm = new CollectionManager();
         OrganizationInputManager om = new OrganizationInputManager(clm, userScanner);
