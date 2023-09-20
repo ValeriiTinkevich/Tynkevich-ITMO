@@ -1,5 +1,7 @@
 package collections;
 
+import java.util.Objects;
+
 public class Location {
     private double x;
     private Long y; //Поле не может быть null
@@ -32,5 +34,14 @@ public class Location {
 
     public void setZ(Integer z) {
         this.z = z;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if(o == this) return true;
+        if (!(o instanceof Location location)) return false;
+
+        return Objects.equals(this.getX(), location.getX()) && Objects.equals(this.getY(), location.getY())
+                && Objects.equals(this.getZ(), location.getZ());
     }
 }

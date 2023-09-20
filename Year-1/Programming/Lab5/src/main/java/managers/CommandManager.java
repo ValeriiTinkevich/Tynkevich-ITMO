@@ -32,7 +32,7 @@ public class CommandManager {
         commands.put("exit", new ExitCommand());
         commands.put("min_by_id", new MinByIdCommand(this.collectionManager));
         commands.put("print_descending", new PrintDescendingCommand(this.collectionManager));
-
+        commands.put("remove_all_by_postal_address", new RemoveAllByPostalCodeAddress(this.collectionManager, this.organizationInputManager));
     }
 
     /**

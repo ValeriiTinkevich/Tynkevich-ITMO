@@ -115,4 +115,7 @@ public class CollectionManager {
                 .sorted(Comparator.reverseOrder()).collect(Collectors.toCollection(ArrayList::new));
     }
 
+    public void remove(int index) {
+        this.organizationCollection.remove(index);
+    }
 }

@@ -12,7 +12,7 @@ public class Validator {
     }
 
     public ArrayList<Organization> validate() {
-        for(Iterator<Organization> iterator = organizations.iterator(); iterator.hasNext(); ) {
+            for(Iterator<Organization> iterator = organizations.iterator(); iterator.hasNext(); ) {
             Organization org = iterator.next();
             if (org.getId() <= 0) iterator.remove();
             if (org.getName() == null || org.getName().equals("")) iterator.remove();

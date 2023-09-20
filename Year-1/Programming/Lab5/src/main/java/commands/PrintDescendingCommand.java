@@ -1,6 +1,7 @@
 package commands;
 
 import collections.Organization;
+import exceptions.WrongAmountOfArgumentsException;
 import managers.CollectionManager;
 import managers.Console;
 
@@ -17,8 +18,14 @@ public class PrintDescendingCommand extends AbstractCommand{
      */
     @Override
     public boolean execute(String argument) {
-        for (Organization organization: collectionManager.getReverse()) {
-            Console.println(organization.toString() + "\n===============");
+        try {
+            if(!argument.isEmpty()) throw new WrongAmountOfArgumentsException();
+            for (Organization organization: collectionManager.getReverse()) {
+                Console.println(organization.toString() + "\n===============");
+            }
+        } catch (WrongAmountOfArgumentsException e) {
+            Console.println(e.getMessage());
+            return false;
         }
         return true;
     }
