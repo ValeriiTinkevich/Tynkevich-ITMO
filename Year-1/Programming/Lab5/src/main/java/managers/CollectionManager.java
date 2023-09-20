@@ -2,7 +2,9 @@ package managers;
 
 import java.time.ZonedDateTime;
 import java.util.ArrayList;
-
+import java.util.Comparator;
+import java.util.NoSuchElementException;
+import java.util.stream.Collectors;
 import collections.Organization;
 
 /**
@@ -94,6 +96,23 @@ public class CollectionManager {
      */
     public int getSize() {
         return organizationCollection.size();
+    }
+
+    public Organization minById() {
+        Organization organization = null;
+        try {
+            organization = organizationCollection.stream()
+                    .min(Comparator.comparing(Organization::getId))
+                    .orElseThrow(NoSuchElementException::new);
+        } catch (NoSuchElementException e) {
+            Console.printError("Collection is empty!");
+        }
+        return organization;
+    }
+
+    public ArrayList<Organization> getReverse() {
+        return organizationCollection.stream()
+                .sorted(Comparator.reverseOrder()).collect(Collectors.toCollection(ArrayList::new));
     }
 
 }

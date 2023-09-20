@@ -10,7 +10,7 @@ import java.util.HashMap;
 public class CommandManager {
     private final int COMMAND_HISTORY_SIZE = 8;
     public final Map<String, ICommand> commands;
-    private final String[] commandHistory = new String[COMMAND_HISTORY_SIZE];
+    //private final String[] commandHistory = new String[COMMAND_HISTORY_SIZE];
     OrganizationInputManager organizationInputManager;
     CollectionManager collectionManager;
     FileReader fileReader;
@@ -30,6 +30,8 @@ public class CommandManager {
         commands.put("save", new SaveCommand(this.collectionManager, this.fileReader));
         commands.put("execute_script", new ExecuteScriptCommand());
         commands.put("exit", new ExitCommand());
+        commands.put("min_by_id", new MinByIdCommand(this.collectionManager));
+        commands.put("print_descending", new PrintDescendingCommand(this.collectionManager));
 
     }
 

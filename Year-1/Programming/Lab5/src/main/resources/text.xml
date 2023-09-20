@@ -1,22 +1,22 @@
 <list>
   <organization>
     <id>1</id>
-    <name>Valeiry</name>
+    <name>Valeriy Tynkevich</name>
     <coordinates>
-      <x>15.0</x>
-      <y>30</y>
+      <x>25.0</x>
+      <y>10</y>
     </coordinates>
-    <creationDate>2023-09-19T00:17:03.4089365+03:00[Europe/Moscow]</creationDate>
-    <annualTurnover>45000</annualTurnover>
-    <fullName>Valeriy Tynkevich</fullName>
-    <employeesCount>4</employeesCount>
-    <type>GOVERNMENT</type>
+    <creationDate>2023-09-19T21:25:42.3415731+03:00[Europe/Moscow]</creationDate>
+    <annualTurnover>3000000</annualTurnover>
+    <fullName>Valeriy Tynkevich Nikolaevich Incorporated</fullName>
+    <employeesCount>45</employeesCount>
+    <type>COMMERCIAL</type>
     <postalAddress>
-      <zipCode>630001</zipCode>
+      <zipCode>35303</zipCode>
       <town>
-        <x>25.0</x>
-        <y>40</y>
-        <z>90</z>
+        <x>19.0</x>
+        <y>30</y>
+        <z>100</z>
       </town>
     </postalAddress>
   </organization>

@@ -1,8 +1,14 @@
 package commands;
 
+import collections.Organization;
+import managers.CollectionManager;
+import managers.Console;
+
 public class PrintDescendingCommand extends AbstractCommand{
-    public PrintDescendingCommand() {
+    CollectionManager collectionManager;
+    public PrintDescendingCommand(CollectionManager collectionManager) {
         super("print_descending", "Displays all collection elements descending");
+        this.collectionManager = collectionManager;
     }
 
     /**
@@ -11,6 +17,9 @@ public class PrintDescendingCommand extends AbstractCommand{
      */
     @Override
     public boolean execute(String argument) {
+        for (Organization organization: collectionManager.getReverse()) {
+            Console.println(organization.toString() + "\n===============");
+        }
         return true;
     }
 }

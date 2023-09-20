@@ -7,15 +7,11 @@ import com.thoughtworks.xstream.security.NoTypePermission;
 import com.thoughtworks.xstream.security.NullPermission;
 import com.thoughtworks.xstream.security.PrimitiveTypePermission;
 
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.IOException;
+
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
+
 
 public class FileReader {
     public String fileName;
@@ -49,19 +45,23 @@ public class FileReader {
 
     public ArrayList<Organization> readCollection() {
         if(!fileName.equals("")) {
-            try(Scanner collectionFileScanner = new Scanner(new File(fileName))) {
+                File file = new File(fileName);
+            try(FileInputStream fis = new FileInputStream(file)) {
+                BufferedInputStream bis = new BufferedInputStream(fis);
                 xStream.setMode(XStream.NO_REFERENCES);
                 xStream.addPermission(AnyTypePermission.ANY);
                 xStream.allowTypeHierarchy(List.class);
                 xStream.allowTypeHierarchy(String.class);
                 xStream.ignoreUnknownElements();
                 StringBuilder xml = new StringBuilder();
-                while(collectionFileScanner.hasNext()){
-                    xml.append(collectionFileScanner.nextLine());
+                while(bis.available() > 0){
+                    xml.append((char) bis.read());
                 }
                 return (ArrayList<Organization>) xStream.fromXML(xml.toString());
             } catch (FileNotFoundException e) {
                 Console.println(e.getMessage());
+            } catch (IOException e) {
+                throw new RuntimeException(e);
             }
         }
         return new ArrayList<>();
@@ -69,10 +69,11 @@ public class FileReader {
 
     public void writeCollection(ArrayList<Organization> collection) {
         if (!fileName.equals("")) {
-            try (FileWriter collectionFileWriter = new FileWriter(fileName)) {
+            try (FileOutputStream collectionFileWriter = new FileOutputStream(fileName)) {
 
                 String xml = xStream.toXML(new ArrayList<>(collection));
-                collectionFileWriter.write(xml);
+                byte[] b = xml.getBytes();
+                collectionFileWriter.write(b);
 
                 Console.println("Collection was successfully added to the file!");
             } catch (IOException exception) {
