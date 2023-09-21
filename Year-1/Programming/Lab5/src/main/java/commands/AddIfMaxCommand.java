@@ -9,14 +9,16 @@ import managers.OrganizationInputManager;
 import java.util.Comparator;
 import java.util.NoSuchElementException;
 
-public class AddIfMaxCommand extends AbstractCommand{
+public class AddIfMaxCommand extends AbstractCommand {
     OrganizationInputManager organizationInputManager;
     CollectionManager collectionManager;
+
     public AddIfMaxCommand(OrganizationInputManager organizationInputManager, CollectionManager collectionManager) {
         super("add_if_max", "Adds element if it has bigger value than MAX in collection");
         this.organizationInputManager = organizationInputManager;
         this.collectionManager = collectionManager;
     }
+
     /**
      * If the collection is empty, the element is added to the collection.
      * If the collection is not empty, compares their annual turnovers and adds element if the turnover is max.
@@ -27,7 +29,7 @@ public class AddIfMaxCommand extends AbstractCommand{
     @Override
     public boolean execute(String argument) {
         try {
-            if(!argument.isEmpty()) throw new WrongAmountOfArgumentsException();
+            if (!argument.isEmpty()) throw new WrongAmountOfArgumentsException();
             Organization askerOrganization = new Organization(
                     organizationInputManager.setId(),
                     organizationInputManager.askName(),
@@ -49,7 +51,7 @@ public class AddIfMaxCommand extends AbstractCommand{
                     .stream()
                     .max(Comparator.comparing(Organization::getAnnualTurnover))
                     .orElseThrow(NoSuchElementException::new);
-            if(askerOrganization.compareTo(maxOrganization) > 0){
+            if (askerOrganization.compareTo(maxOrganization) > 0) {
                 collectionManager.addToCollection(askerOrganization);
                 Console.println("Organization was added successfully!");
             } else {

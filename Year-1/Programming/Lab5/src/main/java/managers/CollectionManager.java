@@ -3,8 +3,11 @@ package managers;
 import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.stream.Collectors;
+
+import collections.Address;
 import collections.Organization;
 
 /**
@@ -77,6 +80,7 @@ public class CollectionManager {
 
     /**
      * Adds element to the collection.
+     *
      * @param organization is an element to be added.
      */
     public void addToCollection(Organization organization) {
@@ -91,7 +95,6 @@ public class CollectionManager {
     }
 
     /**
-     *
      * @return Returns the size of the collection.
      */
     public int getSize() {
@@ -115,7 +118,36 @@ public class CollectionManager {
                 .sorted(Comparator.reverseOrder()).collect(Collectors.toCollection(ArrayList::new));
     }
 
-    public void remove(int index) {
-        this.organizationCollection.remove(index);
+    public void removeFromCollection(Organization organization) {
+        organizationCollection.remove(organization);
     }
+
+    public void removeByIDFromCollection(int id) {
+        organizationCollection.stream()
+                .filter(organization -> organization.getId() == id)
+                .findFirst()
+                .ifPresent(this::removeFromCollection);
+    }
+
+    public int removeAllByPostalCodeFromCollection(Address address) {
+        Iterator<Organization> itr = organizationCollection.iterator();
+        int counter = 0;
+        while (itr.hasNext()) {
+            Organization x = itr.next();
+            if (x.getPostalAddress().equals(address)) {
+                counter++;
+                itr.remove();
+            }
+        }
+        return counter;
+    }
+
+    public void removeFirst() {
+        organizationCollection.remove(0);
+    }
+
+    public void removeLast() {
+        organizationCollection.remove(organizationCollection.size() - 1);
+    }
+
 }

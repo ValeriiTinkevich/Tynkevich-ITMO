@@ -10,9 +10,10 @@ import managers.OrganizationInputManager;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class RemoveAllByPostalCodeAddress extends AbstractCommand{
+public class RemoveAllByPostalCodeAddress extends AbstractCommand {
     CollectionManager collectionManager;
     OrganizationInputManager oim;
+
     public RemoveAllByPostalCodeAddress(CollectionManager collectionManager, OrganizationInputManager OIM) {
         super("remove_all_by_postal_address", "Removes all elements with given Postal Address");
         this.collectionManager = collectionManager;
@@ -26,26 +27,17 @@ public class RemoveAllByPostalCodeAddress extends AbstractCommand{
     @Override
     public boolean execute(String argument) {
         try {
-            if(!argument.isEmpty()) throw new WrongAmountOfArgumentsException();
-            Address compareto = oim.askAddress();
-            ArrayList<Organization> organizations = collectionManager.getOrganizationCollection();
-            Iterator<Organization> itr = organizations.iterator();
-            int counter = 0;
-            while (itr.hasNext()) {
-                Organization x = itr.next();
-                if (x.getPostalAddress().equals(compareto)) {
-                    counter++;
-                    itr.remove();
-                }
+            if (!argument.isEmpty()) throw new WrongAmountOfArgumentsException();
+            int counter = collectionManager.removeAllByPostalCodeFromCollection(oim.askAddress());
+            if (counter == 0) {
+                Console.println("No organization found.");
+            } else {
+                Console.println("Removed " + counter + " organizations from the collection");
             }
-            Console.println("Removed and found: " + counter + " organizations.");
-
+            return true;
         } catch (WrongAmountOfArgumentsException e) {
             Console.println(e.getMessage());
             return false;
         }
-
-        return true;
     }
-
 }

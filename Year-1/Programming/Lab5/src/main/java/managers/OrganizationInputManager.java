@@ -248,6 +248,7 @@ public class OrganizationInputManager {
 
     /**
      * Method that asks user to input the address.
+     *
      * @return Returns address.
      */
     public Address askAddress() {
@@ -298,6 +299,7 @@ public class OrganizationInputManager {
         }
         return organizationType;
     }
+
     /**
      * Method that asks user to input annual turnover.
      *
@@ -330,6 +332,7 @@ public class OrganizationInputManager {
         }
         return turnOver;
     }
+
     /**
      * Method that asks user to input employees count.
      *
@@ -346,7 +349,7 @@ public class OrganizationInputManager {
                 break;
             } catch (NoSuchElementException exception) {
                 Console.printError("The amount of employees can't be recognized");
-                if(!userScanner.hasNext()) {
+                if (!userScanner.hasNext()) {
                     Console.printError("Ctrl-D Caused exit!");
                     System.exit(0);
                 }
@@ -361,6 +364,7 @@ public class OrganizationInputManager {
         }
         return employeesCount;
     }
+
     /**
      * Method that asks user to input full name.
      *

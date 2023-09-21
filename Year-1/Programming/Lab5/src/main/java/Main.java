@@ -12,7 +12,7 @@ public class Main {
         CommandManager cm = new CommandManager(om, clm, fr);
         Console cs = new Console(cm, userScanner, om);
 
-        clm.setOrganizationCollection(fr.readCollection());
+        //clm.setOrganizationCollection(fr.readCollection());
         cs.interactiveMode();
 
 

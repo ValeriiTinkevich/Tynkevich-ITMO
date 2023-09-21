@@ -20,6 +20,7 @@ public class FileReader {
     public void setFileName(String fileName) {
         this.fileName = fileName;
     }
+
     public FileReader(String fileName) {
         this.fileName = fileName;
         xStream = new XStream();
@@ -44,9 +45,9 @@ public class FileReader {
     }
 
     public ArrayList<Organization> readCollection() {
-        if(!fileName.equals("")) {
-                File file = new File(fileName);
-            try(FileInputStream fis = new FileInputStream(file)) {
+        if (!fileName.equals("")) {
+            File file = new File(fileName);
+            try (FileInputStream fis = new FileInputStream(file)) {
                 BufferedInputStream bis = new BufferedInputStream(fis);
                 xStream.setMode(XStream.NO_REFERENCES);
                 xStream.addPermission(AnyTypePermission.ANY);
@@ -54,7 +55,7 @@ public class FileReader {
                 xStream.allowTypeHierarchy(String.class);
                 xStream.ignoreUnknownElements();
                 StringBuilder xml = new StringBuilder();
-                while(bis.available() > 0){
+                while (bis.available() > 0) {
                     xml.append((char) bis.read());
                 }
                 return (ArrayList<Organization>) xStream.fromXML(xml.toString());

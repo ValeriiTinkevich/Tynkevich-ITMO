@@ -3,9 +3,10 @@ package commands;
 import managers.CollectionManager;
 import managers.FileReader;
 
-public class SaveCommand extends AbstractCommand{
+public class SaveCommand extends AbstractCommand {
     CollectionManager collectionManager;
     FileReader fileReader;
+
     public SaveCommand(CollectionManager collectionManager, FileReader fileReader) {
         super("save", "Saves collection to a file");
         this.collectionManager = collectionManager;

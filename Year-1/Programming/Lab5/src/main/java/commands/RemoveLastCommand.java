@@ -1,8 +1,15 @@
 package commands;
 
-public class RemoveLastCommand extends AbstractCommand{
-    public RemoveLastCommand() {
+import exceptions.WrongAmountOfArgumentsException;
+import managers.CollectionManager;
+import managers.Console;
+
+public class RemoveLastCommand extends AbstractCommand {
+    CollectionManager collectionManager;
+
+    public RemoveLastCommand(CollectionManager collectionManager) {
         super("remove_last", "Removes last element from collection");
+        this.collectionManager = collectionManager;
     }
 
     /**
@@ -11,8 +18,17 @@ public class RemoveLastCommand extends AbstractCommand{
      */
     @Override
     public boolean execute(String argument) {
-        return true;
+        try {
+            if (!argument.isEmpty()) throw new WrongAmountOfArgumentsException();
+            collectionManager.removeLast();
+            Console.println("Successfully removed the element");
+            return true;
+        } catch (WrongAmountOfArgumentsException e) {
+            Console.println(e.getMessage());
+        } catch (IndexOutOfBoundsException e) {
+            Console.printError("Collection is empty!");
+        }
+        return false;
     }
-
-
 }
+

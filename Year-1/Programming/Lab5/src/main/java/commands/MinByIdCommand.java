@@ -4,7 +4,7 @@ import exceptions.WrongAmountOfArgumentsException;
 import managers.CollectionManager;
 import managers.Console;
 
-public class MinByIdCommand extends AbstractCommand{
+public class MinByIdCommand extends AbstractCommand {
     private final CollectionManager collectionManager;
 
     public MinByIdCommand(CollectionManager collectionManager) {

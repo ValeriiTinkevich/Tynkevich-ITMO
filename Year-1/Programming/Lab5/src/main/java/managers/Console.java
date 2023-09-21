@@ -6,6 +6,7 @@ import exceptions.WrongAmountOfArgumentsException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+
 /**
  * Class that allows interaction with command line.
  */
@@ -31,12 +32,13 @@ public class Console {
     public static void println(Object obj) {
         System.out.println(obj);
     }
+
     public static void printError(Object obj) {
         Console.println("Error: " + obj);
     }
 
     public void interactiveMode() throws WrongAmountOfArgumentsException {
-            do {
+        do {
             try {
                 String[] userCommand;
                 int commandStatus;
@@ -44,14 +46,12 @@ public class Console {
                 userCommand[1] = userCommand[1].trim();
                 ICommand command = commandManager.commands.get(userCommand[0]);
                 command.execute(userCommand[1]);
-            }
-            catch (NullPointerException e) {
+            } catch (NullPointerException e) {
                 Console.println(e.getMessage());
             }
         } while (userScanner.hasNext());
 
     }
-
 
 
 }

@@ -1,5 +1,7 @@
 package managers;
+
 import commands.*;
+
 import java.util.Map;
 
 import java.util.HashMap;
@@ -14,6 +16,7 @@ public class CommandManager {
     OrganizationInputManager organizationInputManager;
     CollectionManager collectionManager;
     FileReader fileReader;
+
     public CommandManager(OrganizationInputManager organizationInputManager, CollectionManager collectionManager, FileReader fileReader) {
         this.organizationInputManager = organizationInputManager;
         this.collectionManager = collectionManager;
@@ -25,7 +28,7 @@ public class CommandManager {
         commands.put("add", new AddElementCommand(this.organizationInputManager, this.collectionManager));
         commands.put("add_if_max", new AddIfMaxCommand(this.organizationInputManager, this.collectionManager));
         commands.put("update_id", new UpdateByIdCommand());
-        commands.put("remove_by_id", new RemoveByIdCommand());
+        commands.put("remove_by_id", new RemoveByIdCommand(this.collectionManager));
         commands.put("clear", new ClearCommand(this.collectionManager));
         commands.put("save", new SaveCommand(this.collectionManager, this.fileReader));
         commands.put("execute_script", new ExecuteScriptCommand());
@@ -33,10 +36,13 @@ public class CommandManager {
         commands.put("min_by_id", new MinByIdCommand(this.collectionManager));
         commands.put("print_descending", new PrintDescendingCommand(this.collectionManager));
         commands.put("remove_all_by_postal_address", new RemoveAllByPostalCodeAddress(this.collectionManager, this.organizationInputManager));
+        commands.put("remove_first", new RemoveFirstCommand(this.collectionManager));
+        commands.put("remove_last", new RemoveLastCommand(this.collectionManager));
     }
 
     /**
      * Returns the Map of commands.
+     *
      * @return returns Map of commands.
      */
     public Map<String, ICommand> getCommands() {

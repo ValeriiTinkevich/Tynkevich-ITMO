@@ -1,6 +1,6 @@
 package commands;
 
-public class UpdateByIdCommand extends AbstractCommand{
+public class UpdateByIdCommand extends AbstractCommand {
     public UpdateByIdCommand() {
         super("update_id", "Updates id for an element by id");
     }

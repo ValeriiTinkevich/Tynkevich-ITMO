@@ -6,10 +6,11 @@ import managers.CollectionManager;
 import managers.Console;
 import managers.OrganizationInputManager;
 
-public class AddElementCommand extends AbstractCommand{
+public class AddElementCommand extends AbstractCommand {
 
     private OrganizationInputManager organizationInputManager;
     private CollectionManager collectionManager;
+
     public AddElementCommand(OrganizationInputManager organizationInputManager, CollectionManager collectionManager) {
         super("add", "Adds and element to collection");
         this.organizationInputManager = organizationInputManager;
@@ -25,7 +26,7 @@ public class AddElementCommand extends AbstractCommand{
     @Override
     public boolean execute(String argument) {
         try {
-            if(!argument.isEmpty()) throw new WrongAmountOfArgumentsException();
+            if (!argument.isEmpty()) throw new WrongAmountOfArgumentsException();
             collectionManager.addToCollection(new Organization(
                     organizationInputManager.setId(),
                     organizationInputManager.askName(),

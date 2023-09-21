@@ -3,7 +3,7 @@ package commands;
 import exceptions.WrongAmountOfArgumentsException;
 import managers.Console;
 
-public class ExitCommand extends AbstractCommand{
+public class ExitCommand extends AbstractCommand {
     public ExitCommand() {
         super("exit", "Exits console");
     }

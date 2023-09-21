@@ -6,6 +6,7 @@ import managers.Console;
 
 public class ClearCommand extends AbstractCommand {
     CollectionManager collectionManager;
+
     public ClearCommand(CollectionManager collectionManager) {
         super("clear", "Clears collection");
         this.collectionManager = collectionManager;
@@ -20,7 +21,7 @@ public class ClearCommand extends AbstractCommand {
     @Override
     public boolean execute(String argument) {
         try {
-            if(!argument.isEmpty()) throw new WrongAmountOfArgumentsException();
+            if (!argument.isEmpty()) throw new WrongAmountOfArgumentsException();
             collectionManager.clearCollection();
             Console.println("Collection cleared!");
             return true;
