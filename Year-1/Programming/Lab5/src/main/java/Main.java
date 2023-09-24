@@ -12,9 +12,9 @@ public class Main {
         CommandManager cm = new CommandManager(om, clm, fr);
         Console cs = new Console(cm, userScanner, om);
 
-        //clm.setOrganizationCollection(fr.readCollection());
+        clm.setOrganizationCollection(fr.readCollection());
         cs.interactiveMode();
-
+        //cs.scriptMode("C:\\Users\\barm2\\Desktop\\Year-1\\Year-1\\Programming\\Lab5\\src\\main\\resources\\script.txt");
 
     }
 }

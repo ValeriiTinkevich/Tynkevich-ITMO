@@ -1,0 +1,16 @@
+add
+valeriy
+3
+2
+4
+342
+42
+TRUST
+32423
+32
+3
+4
+show
+clear
+show
+exit

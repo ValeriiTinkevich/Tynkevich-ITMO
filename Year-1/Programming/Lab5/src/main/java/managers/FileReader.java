@@ -2,6 +2,7 @@ package managers;
 
 import collections.*;
 import com.thoughtworks.xstream.XStream;
+import com.thoughtworks.xstream.converters.ConversionException;
 import com.thoughtworks.xstream.security.AnyTypePermission;
 import com.thoughtworks.xstream.security.NoTypePermission;
 import com.thoughtworks.xstream.security.NullPermission;
@@ -58,11 +59,15 @@ public class FileReader {
                 while (bis.available() > 0) {
                     xml.append((char) bis.read());
                 }
-                return (ArrayList<Organization>) xStream.fromXML(xml.toString());
+                ArrayList<Organization> orglist =  (ArrayList<Organization>) xStream.fromXML(xml.toString());
+                Validator validator = new Validator(orglist);
+                return validator.validate();
             } catch (FileNotFoundException e) {
                 Console.println(e.getMessage());
             } catch (IOException e) {
                 throw new RuntimeException(e);
+            } catch (ConversionException e) {
+                Console.printError("File has unmatched types!");
             }
         }
         return new ArrayList<>();

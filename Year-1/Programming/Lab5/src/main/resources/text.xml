@@ -1,22 +1,43 @@
 <list>
   <organization>
     <id>1</id>
-    <name>Valeriy Tynkevich</name>
+    <name>Georgiy</name>
     <coordinates>
-      <x>25.0</x>
-      <y>10</y>
+      <x>12312</x>
+      <y>432</y>
     </coordinates>
-    <creationDate>2023-09-19T21:25:42.3415731+03:00[Europe/Moscow]</creationDate>
-    <annualTurnover>3000000</annualTurnover>
-    <fullName>Valeriy Tynkevich Nikolaevich Incorporated</fullName>
-    <employeesCount>45</employeesCount>
-    <type>COMMERCIAL</type>
+    <creationDate>2023-09-24T21:31:15.6946594+03:00[Europe/Moscow]</creationDate>
+    <annualTurnover>-500</annualTurnover>
+    <fullName>Georgiy OOO kompaniya</fullName>
+    <employeesCount>32</employeesCount>
+    <type>TRUST</type>
     <postalAddress>
-      <zipCode>35303</zipCode>
+      <zipCode>35602</zipCode>
       <town>
-        <x>19.0</x>
-        <y>30</y>
-        <z>100</z>
+        <x>13.0</x>
+        <y>153</y>
+        <z>-4</z>
+      </town>
+    </postalAddress>
+  </organization>
+  <organization>
+    <id>2</id>
+    <name>Pokemon</name>
+    <coordinates>
+      <x>5</x>
+      <y>12</y>
+    </coordinates>
+    <creationDate>2023-09-24T21:32:14.6902056+03:00[Europe/Moscow]</creationDate>
+    <annualTurnover>4500000</annualTurnover>
+    <fullName>Pikachu</fullName>
+    <employeesCount>10</employeesCount>
+    <type>GOVERNMENT</type>
+    <postalAddress>
+      <zipCode>50320</zipCode>
+      <town>
+        <x>16.99</x>
+        <y>23</y>
+        <z>43</z>
       </town>
     </postalAddress>
   </organization>

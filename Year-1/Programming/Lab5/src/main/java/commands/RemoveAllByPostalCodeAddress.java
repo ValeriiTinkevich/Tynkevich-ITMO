@@ -2,6 +2,7 @@ package commands;
 
 import collections.Address;
 import collections.Organization;
+import exceptions.IncorrectInputInScriptException;
 import exceptions.WrongAmountOfArgumentsException;
 import managers.CollectionManager;
 import managers.Console;
@@ -38,6 +39,8 @@ public class RemoveAllByPostalCodeAddress extends AbstractCommand {
         } catch (WrongAmountOfArgumentsException e) {
             Console.println(e.getMessage());
             return false;
+        } catch (IncorrectInputInScriptException ignore) {
         }
+        return false;
     }
 }

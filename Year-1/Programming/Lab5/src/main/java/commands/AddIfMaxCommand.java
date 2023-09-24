@@ -1,6 +1,7 @@
 package commands;
 
 import collections.Organization;
+import exceptions.IncorrectInputInScriptException;
 import exceptions.WrongAmountOfArgumentsException;
 import managers.CollectionManager;
 import managers.Console;
@@ -45,6 +46,7 @@ public class AddIfMaxCommand extends AbstractCommand {
             if (collectionManager.getSize() == 0) {
                 collectionManager.addToCollection(askerOrganization);
                 Console.println("Organization was added successfully!");
+                return true;
             }
 
             Organization maxOrganization = collectionManager.getOrganizationCollection()
@@ -61,8 +63,9 @@ public class AddIfMaxCommand extends AbstractCommand {
         } catch (WrongAmountOfArgumentsException e) {
             Console.println(e.getMessage());
             return false;
+        } catch (IncorrectInputInScriptException ignore) {
         }
-        return true;
+        return false;
     }
 
 

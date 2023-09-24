@@ -1,6 +1,7 @@
 package commands;
 
 import collections.Organization;
+import exceptions.IncorrectInputInScriptException;
 import exceptions.WrongAmountOfArgumentsException;
 import managers.CollectionManager;
 import managers.Console;
@@ -39,11 +40,13 @@ public class AddElementCommand extends AbstractCommand {
                     organizationInputManager.askAddress()
             ));
             Console.println("Organization was added successfully!");
+            return true;
         } catch (WrongAmountOfArgumentsException e) {
             Console.println(e.getMessage());
             return false;
+        } catch (IncorrectInputInScriptException ignore) {
         }
-        return true;
+        return false;
     }
 
 
