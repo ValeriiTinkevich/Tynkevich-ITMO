@@ -1,5 +1,6 @@
 package commands;
 
+import exceptions.WrongAmountOfArgumentsException;
 import managers.Console;
 import managers.OrganizationInputManager;
 
@@ -23,12 +24,14 @@ public class ExecuteScriptCommand extends AbstractCommand {
     @Override
     public boolean execute(String argument) {
         try {
+            if (!argument.isEmpty()) throw new WrongAmountOfArgumentsException();
             organizationInputManager.setScriptMode();
             console.scriptMode(argument);
             return true;
-        } catch (Exception e) {
-            throw new RuntimeException(e);
+        } catch (WrongAmountOfArgumentsException e) {
+            Console.println(e.getMessage());
         }
+        return false;
     }
 }
 

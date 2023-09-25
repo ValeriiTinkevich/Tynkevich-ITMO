@@ -1,16 +1,16 @@
 package commands;
 
 import managers.CollectionManager;
-import managers.FileReader;
+import managers.FileManager;
 
 public class SaveCommand extends AbstractCommand {
     CollectionManager collectionManager;
-    FileReader fileReader;
+    FileManager fileManager;
 
-    public SaveCommand(CollectionManager collectionManager, FileReader fileReader) {
+    public SaveCommand(CollectionManager collectionManager, FileManager fileManager) {
         super("save", "Saves collection to a file");
         this.collectionManager = collectionManager;
-        this.fileReader = fileReader;
+        this.fileManager = fileManager;
     }
 
     /**
@@ -19,7 +19,7 @@ public class SaveCommand extends AbstractCommand {
      */
     @Override
     public boolean execute(String argument) {
-        fileReader.writeCollection(collectionManager.getOrganizationCollection());
+        fileManager.writeCollection(collectionManager.getOrganizationCollection());
         return true;
     }
 

@@ -8,7 +8,9 @@ import java.util.NoSuchElementException;
 import java.util.stream.Collectors;
 
 import collections.Address;
+import collections.Coordinates;
 import collections.Organization;
+import collections.OrganizationType;
 
 /**
  * Class that manages collections.
@@ -148,6 +150,11 @@ public class CollectionManager {
 
     public void removeLast() {
         organizationCollection.remove(organizationCollection.size() - 1);
+    }
+
+    public void update(int id, Organization organization) {
+        int index = organizationCollection.indexOf(getById(id));
+        organizationCollection.set(index, organization);
     }
 
 }

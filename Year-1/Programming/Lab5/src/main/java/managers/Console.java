@@ -2,7 +2,6 @@ package managers;
 
 import commands.ICommand;
 import exceptions.ScriptRecursionException;
-import exceptions.WrongAmountOfArgumentsException;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -41,11 +40,11 @@ public class Console {
         Console.println("Error: " + obj);
     }
 
-    public void interactiveMode() throws WrongAmountOfArgumentsException {
-        do {
+    public void interactiveMode() {
+        while (userScanner.hasNext()) {
+            Console.print(PS2);
             try {
                 String[] userCommand;
-                int commandStatus;
                 userCommand = (userScanner.nextLine().trim() + " ").split(" ", 2);
                 userCommand[1] = userCommand[1].trim();
                 ICommand command = commandManager.commands.get(userCommand[0]);
@@ -53,7 +52,7 @@ public class Console {
             } catch (NullPointerException e) {
                 Console.println(e.getMessage());
             }
-        } while (userScanner.hasNext());
+        }
 
     }
     public int scriptMode(String argument) {

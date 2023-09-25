@@ -1,13 +1,9 @@
 import commands.ExecuteScriptCommand;
-import commands.ICommand;
-import exceptions.WrongAmountOfArgumentsException;
 import managers.*;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws WrongAmountOfArgumentsException, FileNotFoundException {
+    public static void main(String[] args) {
         String filename = "text.xml";
         Scanner userScanner = new Scanner(System.in);
         CollectionManager clm = new CollectionManager();
@@ -20,7 +16,7 @@ public class Main {
             filename = args[0];
             Console.println("Using file " + filename);
         }
-        FileReader fr = new FileReader(filename);
+        FileManager fr = new FileManager(filename);
         OrganizationInputManager om = new OrganizationInputManager(clm, userScanner);
         CommandManager cm = new CommandManager(om, clm, fr);
         Console cs = new Console(cm, userScanner, om);

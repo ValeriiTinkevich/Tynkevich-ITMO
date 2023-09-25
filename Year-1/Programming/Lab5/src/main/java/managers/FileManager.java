@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class FileReader {
+public class FileManager {
     public String fileName;
     private final XStream xStream;
 
@@ -22,7 +22,7 @@ public class FileReader {
         this.fileName = fileName;
     }
 
-    public FileReader(String fileName) {
+    public FileManager(String fileName) {
         this.fileName = fileName;
         xStream = new XStream();
         xStream.alias("address", Address.class);
