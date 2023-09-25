@@ -2,15 +2,13 @@ package managers;
 
 import commands.*;
 
-import java.util.Map;
-
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Class that manages commands.
  */
 public class CommandManager {
-    private final int COMMAND_HISTORY_SIZE = 8;
     public final Map<String, ICommand> commands;
     //private final String[] commandHistory = new String[COMMAND_HISTORY_SIZE];
     OrganizationInputManager organizationInputManager;

@@ -1,15 +1,10 @@
 package commands;
 
-import collections.Address;
-import collections.Organization;
 import exceptions.IncorrectInputInScriptException;
 import exceptions.WrongAmountOfArgumentsException;
 import managers.CollectionManager;
 import managers.Console;
 import managers.OrganizationInputManager;
-
-import java.util.ArrayList;
-import java.util.Iterator;
 
 public class RemoveAllByPostalCodeAddress extends AbstractCommand {
     CollectionManager collectionManager;

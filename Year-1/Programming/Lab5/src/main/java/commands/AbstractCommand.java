@@ -9,10 +9,11 @@ package commands;
  * It has one hashCode method: hashCode().
  * It has one equals method: equals(Object obj).
  */
-public abstract  class AbstractCommand implements ICommand {
+public abstract class AbstractCommand implements ICommand {
     private final String name;
     private final String description;
-    public AbstractCommand(String name, String description){
+
+    public AbstractCommand(String name, String description) {
         this.name = name;
         this.description = description;
 
@@ -35,15 +36,17 @@ public abstract  class AbstractCommand implements ICommand {
     public String getDescription() {
         return description;
     }
+
     /**
      * It returns a string implementation of the object/
      *
      * @return The name of the command and the description
      */
     @Override
-    public String toString(){
+    public String toString() {
         return "\"" + name + "\" - " + description;
     }
+
     /**
      * The hashCode method returns a hash code for the object
      *
@@ -53,6 +56,7 @@ public abstract  class AbstractCommand implements ICommand {
     public int hashCode() {
         return name.hashCode() + description.hashCode();
     }
+
     /**
      * The equals method compares the name and description of the command to the name and description
      * of the other command.

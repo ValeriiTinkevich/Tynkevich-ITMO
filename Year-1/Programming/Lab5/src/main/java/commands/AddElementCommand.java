@@ -9,8 +9,8 @@ import managers.OrganizationInputManager;
 
 public class AddElementCommand extends AbstractCommand {
 
-    private OrganizationInputManager organizationInputManager;
-    private CollectionManager collectionManager;
+    private final OrganizationInputManager organizationInputManager;
+    private final CollectionManager collectionManager;
 
     public AddElementCommand(OrganizationInputManager organizationInputManager, CollectionManager collectionManager) {
         super("add", "Adds and element to collection");

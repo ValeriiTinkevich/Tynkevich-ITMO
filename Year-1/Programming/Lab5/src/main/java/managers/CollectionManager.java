@@ -1,16 +1,14 @@
 package managers;
 
+import collections.Address;
+import collections.Organization;
+
 import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.stream.Collectors;
-
-import collections.Address;
-import collections.Coordinates;
-import collections.Organization;
-import collections.OrganizationType;
 
 /**
  * Class that manages collections.

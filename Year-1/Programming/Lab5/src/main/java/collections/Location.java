@@ -20,6 +20,7 @@ public class Location {
     public Long getY() {
         return y;
     }
+
     public Integer getZ() {
         return z;
     }
@@ -38,7 +39,7 @@ public class Location {
 
     @Override
     public boolean equals(Object o) {
-        if(o == this) return true;
+        if (o == this) return true;
         if (!(o instanceof Location location)) return false;
 
         return Objects.equals(this.getX(), location.getX()) && Objects.equals(this.getY(), location.getY())

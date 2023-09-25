@@ -77,7 +77,7 @@ public class OrganizationInputManager {
             Console.print("Enter name: ");
             try {
                 name = userScanner.nextLine().trim();
-                if(scriptMode) Console.println(name);
+                if (scriptMode) Console.println(name);
                 if (name.equals("")) throw new EmptyArgumentException();
                 break;
             } catch (EmptyArgumentException e) {
@@ -248,7 +248,7 @@ public class OrganizationInputManager {
             Console.print("Enter the zip code: ");
             try {
                 zipCode = userScanner.nextLine().trim();
-                if(scriptMode) Console.println(zipCode);
+                if (scriptMode) Console.println(zipCode);
                 break;
             } catch (NoSuchElementException e) {
                 Console.printError("The zip code can't be loaded or recognized");

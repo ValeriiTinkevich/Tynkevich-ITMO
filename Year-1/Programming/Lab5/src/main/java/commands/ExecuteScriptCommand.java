@@ -24,7 +24,7 @@ public class ExecuteScriptCommand extends AbstractCommand {
     @Override
     public boolean execute(String argument) {
         try {
-            if (!argument.isEmpty()) throw new WrongAmountOfArgumentsException();
+            if (argument.isEmpty()) throw new WrongAmountOfArgumentsException();
             organizationInputManager.setScriptMode();
             console.scriptMode(argument);
             return true;

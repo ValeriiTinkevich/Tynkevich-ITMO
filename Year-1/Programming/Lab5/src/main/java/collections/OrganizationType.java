@@ -10,7 +10,7 @@ public enum OrganizationType {
         for (OrganizationType category : values()) {
             nameList.append(category.name()).append(", ");
         }
-        return nameList.substring(0, nameList.length()-2);
+        return nameList.substring(0, nameList.length() - 2);
     }
 }
 

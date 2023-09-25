@@ -50,11 +50,12 @@ public class Console {
                 ICommand command = commandManager.commands.get(userCommand[0]);
                 command.execute(userCommand[1]);
             } catch (NullPointerException e) {
-                Console.println(e.getMessage());
+                Console.printError("No such command!");
             }
         }
 
     }
+
     public int scriptMode(String argument) {
         String[] userCommand;
         scriptStack.add(argument);
@@ -94,7 +95,7 @@ public class Console {
             Console.printError("Unexpected error!");
             System.exit(0);
         } finally {
-            scriptStack.remove(scriptStack.size()-1);
+            scriptStack.remove(scriptStack.size() - 1);
         }
         return 1;
     }

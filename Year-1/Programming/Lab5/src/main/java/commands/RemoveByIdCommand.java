@@ -1,17 +1,11 @@
 package commands;
 
-import collections.Address;
-import collections.Organization;
 import exceptions.MustNotBeEmptyException;
 import exceptions.WrongAmountOfArgumentsException;
 import managers.CollectionManager;
 import managers.Console;
-import managers.OrganizationInputManager;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-
-public class RemoveByIdCommand extends AbstractCommand{
+public class RemoveByIdCommand extends AbstractCommand {
     CollectionManager collectionManager;
 
     public RemoveByIdCommand(CollectionManager collectionManager) {
@@ -26,9 +20,9 @@ public class RemoveByIdCommand extends AbstractCommand{
     @Override
     public boolean execute(String argument) {
         try {
-            if(argument.isEmpty()) throw new WrongAmountOfArgumentsException();
+            if (argument.isEmpty()) throw new WrongAmountOfArgumentsException();
             int id = Integer.parseInt(argument);
-            if(collectionManager.getById(id) == null) throw new MustNotBeEmptyException();
+            if (collectionManager.getById(id) == null) throw new MustNotBeEmptyException();
             collectionManager.removeByIDFromCollection(id);
             Console.println("Successfully removed the element");
             return true;

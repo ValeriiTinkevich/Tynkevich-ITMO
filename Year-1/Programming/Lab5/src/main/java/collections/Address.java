@@ -5,7 +5,6 @@ public class Address {
     private Location town; //Поле может быть null
 
 
-
     public void setTown(Location town) {
         this.town = town;
     }
@@ -23,13 +22,14 @@ public class Address {
     public String getZipCode() {
         return zipCode;
     }
+
     public Location getTown() {
         return town;
     }
 
     @Override
     public boolean equals(Object o) {
-        if(o == this) return true;
+        if (o == this) return true;
         if (!(o instanceof Address address)) return false;
 
         return this.getZipCode().equals(address.getZipCode())

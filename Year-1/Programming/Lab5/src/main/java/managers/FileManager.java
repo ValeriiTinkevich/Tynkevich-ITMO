@@ -8,7 +8,6 @@ import com.thoughtworks.xstream.security.NoTypePermission;
 import com.thoughtworks.xstream.security.NullPermission;
 import com.thoughtworks.xstream.security.PrimitiveTypePermission;
 
-
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -59,7 +58,7 @@ public class FileManager {
                 while (bis.available() > 0) {
                     xml.append((char) bis.read());
                 }
-                ArrayList<Organization> orglist =  (ArrayList<Organization>) xStream.fromXML(xml.toString());
+                ArrayList<Organization> orglist = (ArrayList<Organization>) xStream.fromXML(xml.toString());
                 Validator validator = new Validator(orglist);
                 return validator.validate();
             } catch (FileNotFoundException e) {

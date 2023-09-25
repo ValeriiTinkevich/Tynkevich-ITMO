@@ -2,8 +2,8 @@ package collections;
 
 
 public class Coordinates {
-    private Double x; //Максимальное значение поля: 170, Поле не может быть null
-    private Long y; //Значение поля должно быть больше -671, Поле не может быть null
+    private final Double x; //Максимальное значение поля: 170, Поле не может быть null
+    private final Long y; //Значение поля должно быть больше -671, Поле не может быть null
 
     public Coordinates(Double x, Long y) {
         this.x = x;
@@ -13,6 +13,7 @@ public class Coordinates {
     public Double getX() {
         return this.x;
     }
+
     public Long getY() {
         return this.y;
     }
