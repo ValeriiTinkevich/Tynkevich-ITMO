@@ -58,7 +58,6 @@ public class Console {
     }
     public int scriptMode(String argument) {
         String[] userCommand;
-        int commandStatus;
         scriptStack.add(argument);
         try (Scanner scriptScanner = new Scanner(new File(argument))) {
             if (!scriptScanner.hasNext()) throw new NoSuchElementException();

@@ -31,7 +31,7 @@ public class CommandManager {
         commands.put("remove_by_id", new RemoveByIdCommand(this.collectionManager));
         commands.put("clear", new ClearCommand(this.collectionManager));
         commands.put("save", new SaveCommand(this.collectionManager, this.fileReader));
-        commands.put("execute_script", new ExecuteScriptCommand());
+        commands.put("execute_script", new ExecuteScriptCommand(this.organizationInputManager));
         commands.put("exit", new ExitCommand());
         commands.put("min_by_id", new MinByIdCommand(this.collectionManager));
         commands.put("print_descending", new PrintDescendingCommand(this.collectionManager));

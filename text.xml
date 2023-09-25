@@ -1,0 +1,23 @@
+<list>
+  <organization>
+    <id>1</id>
+    <name>4</name>
+    <coordinates>
+      <x>3.0</x>
+      <y>4</y>
+    </coordinates>
+    <creationDate>2023-09-19T00:19:43.6918188+03:00[Europe/Moscow]</creationDate>
+    <annualTurnover>3</annualTurnover>
+    <fullName>4</fullName>
+    <employeesCount>3</employeesCount>
+    <type>TRUST</type>
+    <postalAddress>
+      <zipCode>3</zipCode>
+      <town>
+        <x>4.0</x>
+        <y>3</y>
+        <z>4</z>
+      </town>
+    </postalAddress>
+  </organization>
+</list>
