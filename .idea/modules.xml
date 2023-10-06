@@ -4,9 +4,12 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Year-1/Programming/Lab3/Lab3.iml" filepath="$PROJECT_DIR$/Year-1/Programming/Lab3/Lab3.iml" />
       <module fileurl="file://$PROJECT_DIR$/Year-1/Programming/Lab5/Lab5.iml" filepath="$PROJECT_DIR$/Year-1/Programming/Lab5/Lab5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Year-1/Programming/Lab6/Lab6.iml" filepath="$PROJECT_DIR$/Year-1/Programming/Lab6/Lab6.iml" />
       <module fileurl="file://$PROJECT_DIR$/Year-1/Programming/Programming.iml" filepath="$PROJECT_DIR$/Year-1/Programming/Programming.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Year-1.iml" filepath="$PROJECT_DIR$/.idea/Year-1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Year-1/Programming/Lab6/client/client.iml" filepath="$PROJECT_DIR$/Year-1/Programming/Lab6/client/client.iml" />
       <module fileurl="file://$PROJECT_DIR$/Year-1/Programming/Lab3/lab3/lab31.iml" filepath="$PROJECT_DIR$/Year-1/Programming/Lab3/lab3/lab31.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Year-1/Programming/Lab6/server/server.iml" filepath="$PROJECT_DIR$/Year-1/Programming/Lab6/server/server.iml" />
     </modules>
   </component>
 </project>

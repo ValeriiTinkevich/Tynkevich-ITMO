@@ -1,22 +1,64 @@
 <list>
-  <organization>
+  <ffffff>
     <id>1</id>
-    <name>4</name>
+    <name>Valeriy</name>
     <coordinates>
-      <x>3.0</x>
-      <y>4</y>
+      <x>3.24</x>
+      <y>2</y>
     </coordinates>
-    <creationDate>2023-09-19T00:19:43.6918188+03:00[Europe/Moscow]</creationDate>
-    <annualTurnover>3</annualTurnover>
-    <fullName>4</fullName>
-    <employeesCount>3</employeesCount>
+    <creationDate>2023-09-25T13:16:30.9673728+03:00[Europe/Moscow]</creationDate>
+    <annualTurnover>4500000</annualTurnover>
+    <fullName>Valeriy Tynkevich</fullName>
+    <employeesCount>12</employeesCount>
     <type>TRUST</type>
     <postalAddress>
-      <zipCode>3</zipCode>
+      <zipCode>43203</zipCode>
       <town>
-        <x>4.0</x>
-        <y>3</y>
-        <z>4</z>
+        <x>65.93</x>
+        <y>193</y>
+        <z>-1000</z>
+      </town>
+    </postalAddress>
+  </ffffff>
+  <organization>
+    <id>2</id>
+    <name>ITMO</name>
+    <coordinates>
+      <x>30.42313</x>
+      <y>170</y>
+    </coordinates>
+    <creationDate>2023-09-25T13:17:23.8996678+03:00[Europe/Moscow]</creationDate>
+    <annualTurnover>320000</annualTurnover>
+    <fullName>ITMO CORPORATION</fullName>
+    <employeesCount>1024</employeesCount>
+    <type>GOVERNMENT</type>
+    <postalAddress>
+      <zipCode>630001</zipCode>
+      <town>
+        <x>23.32</x>
+        <y>12414</y>
+        <z>124</z>
+      </town>
+    </postalAddress>
+  </organization>
+  <organization>
+    <id>3</id>
+    <name>5</name>
+    <coordinates>
+      <x>32.34</x>
+      <y>1024</y>
+    </coordinates>
+    <creationDate>2023-09-25T13:18:09.6055086+03:00[Europe/Moscow]</creationDate>
+    <annualTurnover>23423423</annualTurnover>
+    <fullName>PYATOROCHKA</fullName>
+    <employeesCount>520</employeesCount>
+    <type>COMMERCIAL</type>
+    <postalAddress>
+      <zipCode>43242</zipCode>
+      <town>
+        <x>0.5</x>
+        <y>-670</y>
+        <z>248</z>
       </town>
     </postalAddress>
   </organization>

@@ -58,6 +58,7 @@ public class FileManager {
                 while (bis.available() > 0) {
                     xml.append((char) bis.read());
                 }
+
                 ArrayList<Organization> orglist = (ArrayList<Organization>) xStream.fromXML(xml.toString());
                 Validator validator = new Validator(orglist);
                 return validator.validate();
