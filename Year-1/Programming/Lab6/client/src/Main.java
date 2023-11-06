@@ -4,11 +4,15 @@ import java.io.OutputStream;
 import java.net.InetAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
+import java.util.Scanner;
 
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        byte arr[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+
+        Scanner userScanner = new Scanner(System.in);
+        String str = userScanner.next();
+        byte arr[] = str.getBytes();
         int len = arr.length;
         Socket sock;
         OutputStream os; InputStream is;
@@ -25,8 +29,7 @@ public class Main {
         is = sock.getInputStream();
         is.read(arr);
 
-        for (byte j : arr) {
-            System.out.println(j);
-        }
+        String inputstring = new String(arr);
+
     }
 }

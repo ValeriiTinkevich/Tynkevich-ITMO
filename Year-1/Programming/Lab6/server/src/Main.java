@@ -22,9 +22,7 @@ public class Main {
         is = sock.getInputStream();
         is.read(arr);
 
-        for (int j = 0; j < len; j++) {
-            arr[j] *= 2;
-        }
+        arr[0] = 'F';
 
         os = sock.getOutputStream();
         os.write(arr);
