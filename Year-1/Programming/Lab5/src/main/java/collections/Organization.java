@@ -2,6 +2,7 @@ package collections;
 
 
 import java.time.ZonedDateTime;
+import java.util.Objects;
 
 
 public class Organization implements Comparable<Organization> {
@@ -77,6 +78,19 @@ public class Organization implements Comparable<Organization> {
     @Override
     public int compareTo(Organization o) {
         return this.getAnnualTurnover() - o.getAnnualTurnover();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Organization that = (Organization) o;
+        return id == that.id && annualTurnover == that.annualTurnover && Objects.equals(name, that.name) && Objects.equals(coordinates, that.coordinates) && Objects.equals(creationDate, that.creationDate) && Objects.equals(fullName, that.fullName) && Objects.equals(employeesCount, that.employeesCount) && type == that.type && Objects.equals(postalAddress, that.postalAddress);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, coordinates, creationDate, annualTurnover, fullName, employeesCount, type, postalAddress);
     }
 
     @Override
